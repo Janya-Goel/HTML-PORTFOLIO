@@ -1,19 +1,106 @@
-<h1>About Me</h1>
-<p>
-  I am a curious and driven individual with a strong inclination toward continuous learning and personal growth.
-  Throughout my academic journey, I have developed a keen interest in understanding how things work, especially 
-  when it comes to systems and structures that drive innovation. I enjoy working in collaborative environments
-  that challenge me to think critically and creatively.
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Janya</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefefe;
+      color: #333;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.7;
+      transition: all 0.3s ease;
+    }
 
-<p>
-  My primary area of interest lies in the field of technology. I am particularly drawn to how tech can be used
-  to create meaningful change and improve everyday life. Whether it's exploring emerging trends, understanding
-  data structures, or gaining insight into digital systems, I am always eager to deepen my knowledge and contribute
-  in ways that align with real-world applications.
-</p>
+    h1 {
+      color: #4a90e2;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
 
-<p>Outside of academics, I have a few hobbies that help me stay balanced and inspired. I enjoy reading, listening 
-  to music, and participating in activities that allow for creative expression. These interests, though simple, 
-  offer me a refreshing break and keep me energized for the work I’m passionate about.
-</p>
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    button, a.back-link {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      margin: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover, a.back-link:hover {
+      background-color: #2c72c7;
+    }
+
+    /* Dark Mode */
+    .dark {
+      background-color: #1e1e1e;
+      color: #eaeaea;
+    }
+
+    .dark h1 {
+      color: #ffc107;
+    }
+
+    .dark button, .dark a.back-link {
+      background-color: #ffc107;
+      color: #1e1e1e;
+    }
+
+    .dark button:hover, .dark a.back-link:hover {
+      background-color: #e0a800;
+    }
+  </style>
+</head>
+<body>
+  <h1>About Me</h1>
+
+  <p>
+    Hi! I'm Janya — a curious, growth-oriented individual with a passion for technology and a constant drive to learn.
+    I'm deeply fascinated by how systems function, how innovation is sparked, and how structured thinking can
+    shape meaningful change.
+  </p>
+
+  <p>
+    My journey so far has nurtured a strong inclination toward tech-driven problem solving. I'm especially interested in
+    how technology — from intelligent systems to data architecture — can improve everyday life and solve real-world challenges.
+    Whether I'm exploring the logic behind data structures or diving into the latest in digital innovation,
+    I'm always looking to deepen my knowledge and apply it creatively.
+  </p>
+
+  <p>
+    Beyond the screen, I love immersing myself in books, losing myself in music, and taking time for thoughtful
+    self-expression. These hobbies keep me grounded, inspired, and ready to approach my goals with both heart and mind.
+  </p>
+
+  <div class="button-container">
+    <button id="themeToggle">Toggle Light/Dark Mode</button>
+    <a class="back-link" href="../index.html">← Back to Portfolio</a>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+  </script>
+</body>
+</html>
