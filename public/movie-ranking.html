@@ -1,19 +1,176 @@
-<h1>HTML PROJECT</h1>
-<h2>TOP 3 INDIAN MOVIES </h2>
-<hr>
-<h3>Raazi</h3>
-<p>
-Alia Bhatt<br>
-Vicky Kaushal<br>
-</p>
-<h3>Uri</h3>
-<p>
-Vicky Kaushal<br>
-Yami Gautam<br>
-</p>
-<h3>SOTY</h3>
-<p>
-Alia Bhatt<br>
-Varun Dhawan<br>
-Siddharth Malhotra<br>
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Ranking | Janya Goel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #111;
+      --accent-color: #6200ea;
+      --card-bg: #f0f0f0;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #1e1e1e;
+      --text-color: #f4f4f4;
+      --accent-color: #bb86fc;
+      --card-bg: #2e2e2e;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+      color: white;
+    }
+
+    .tagline {
+      margin-top: 0.5rem;
+      font-weight: 400;
+    }
+
+    button#themeToggle {
+      margin-top: 1rem;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--accent-color);
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button#themeToggle:hover {
+      background-color: #3700b3;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .movie-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    .movie-card {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .movie-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .movie-card h2 {
+      margin-bottom: 0.5rem;
+      color: var(--accent-color);
+    }
+
+    .movie-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .links {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background-color: var(--card-bg);
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Top 3 Indian Movies</h1>
+    <p class="tagline">A mini project by Janya</p>
+    <button id="themeToggle">Toggle Theme</button>
+  </header>
+
+  <main>
+    <section class="movie-list">
+      <div class="movie-card">
+        <h2>Raazi</h2>
+        <p>🎬 Alia Bhatt<br>🎬 Vicky Kaushal</p>
+      </div>
+
+      <div class="movie-card">
+        <h2>Uri</h2>
+        <p>🎬 Vicky Kaushal<br>🎬 Yami Gautam</p>
+      </div>
+
+      <div class="movie-card">
+        <h2>Student of the Year (SOTY)</h2>
+        <p>🎬 Alia Bhatt<br>🎬 Varun Dhawan<br>🎬 Siddharth Malhotra</p>
+      </div>
+    </section>
+
+    <div class="links">
+      <a href="./../index.html">← Back to Portfolio</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Janya Goel</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleBtn = document.getElementById("themeToggle");
+
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      });
+
+      if (!savedTheme) {
+        const hour = new Date().getHours();
+        if (hour >= 19 || hour < 6) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      }
+    });
+  </script>
+</body>
+</html>
